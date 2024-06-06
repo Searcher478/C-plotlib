@@ -82,7 +82,9 @@ void CreatRoute(vector<int> route) {
         putText(src, num, p[route[i]], FONT_HERSHEY_PLAIN, 1, Scalar(b, g, r), 1, LINE_AA);
     }
     imwrite("src.jpg", src);
-    imshow("巡回路径", src);
+    cv::Mat image_fliped;
+    cv::flip(src, image_fliped, 0);
+    imshow("巡回路径", image_fliped);
     waitKey(0);
 }
 
